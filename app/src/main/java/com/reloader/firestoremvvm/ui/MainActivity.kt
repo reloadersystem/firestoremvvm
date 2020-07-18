@@ -2,11 +2,12 @@ package com.reloader.firestoremvvm.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.reloader.firestoremvvm.MainAdapter
-import com.reloader.firestoremvvm.viewmodel.MainViewModel
 import com.reloader.firestoremvvm.R
+import com.reloader.firestoremvvm.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,5 +25,15 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
+        observeData()
+
+    }
+
+    fun observeData() {
+
+        viewModel.fetchUserData().observe(this, Observer {
+            adapter.setListData(it)
+            adapter.notifyDataSetChanged()
+        })
     }
 }
