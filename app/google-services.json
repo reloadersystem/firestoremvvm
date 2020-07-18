@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "696262246903",
+    "firebase_url": "https://ktmvvmrecycler.firebaseio.com",
+    "project_id": "ktmvvmrecycler",
+    "storage_bucket": "ktmvvmrecycler.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696262246903:android:7517d56522fb8b8875eef2",
+        "android_client_info": {
+          "package_name": "com.reloader.firestoremvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696262246903-i1oq7nfe14hn2d1e8q8io177fm950vqj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reloader.firestoremvvm",
+            "certificate_hash": "0313bd946df14319cb724b13050f23ced3a6e89c"
+          }
+        },
+        {
+          "client_id": "696262246903-skeb0itvklj93rej6p2corhm2766iunn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi0N45nrtXcaWXhrE-CUTWajkQh5ayKNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696262246903-skeb0itvklj93rej6p2corhm2766iunn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
