@@ -1,6 +1,7 @@
 package com.reloader.firestoremvvm.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -24,14 +25,17 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
-
         observeData()
 
     }
 
     fun observeData() {
 
+        shimmer_view_container.startShimmer()
         viewModel.fetchUserData().observe(this, Observer {
+            shimmer_view_container.stopShimmer()
+            //shimmer_view_container.hideShimmer()
+            shimmer_view_container.visibility = View.GONE
             adapter.setListData(it)
             adapter.notifyDataSetChanged()
         })
