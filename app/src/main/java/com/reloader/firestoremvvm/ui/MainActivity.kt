@@ -1,13 +1,20 @@
-package com.reloader.firestoremvvm
+package com.reloader.firestoremvvm.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.reloader.firestoremvvm.MainAdapter
+import com.reloader.firestoremvvm.viewmodel.MainViewModel
+import com.reloader.firestoremvvm.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter: MainAdapter
+    private val viewModel by lazy {
+        ViewModelProviders.of(this).get(MainViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,13 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
-
-        val dummyList = mutableListOf<Usuario>()
-        dummyList.add(Usuario("https://www.academiamoviles.com/view/logos_cursos/android-con-kotlin.png",
-            "Reloader","ViewModelKt"))
-
-        adapter.setListData(dummyList)
-        adapter.notifyDataSetChanged()
 
     }
 }
